@@ -6,7 +6,7 @@
 }
 
 .checkout__title{
-    margin-right: 10px;
+    margin: 10px;
     padding: 10px;
     border-bottom: 1px solid lightgray;
 }
@@ -21,4 +21,9 @@
     padding: 10px; */
     height: 180px;
     background-color: white;
+}
+
+.empty_cart{
+    margin: 10px;
+    padding: 10px;
 }
