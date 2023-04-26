@@ -4,9 +4,10 @@ import CheckCircleIcon from '@mui/icons-material/CheckCircle';
 import "./Subtotal.css"
 import {useStateValue} from './StateProvider'
 import { getBasketTotal } from './reducer';
-
+import { useNavigate } from 'react-router-dom';
 
 const Subtotal = () => {
+  const navigate = useNavigate ();
     const [{basket},dispatch] = useStateValue();
   return (
     <div className='subtotal'>
@@ -26,7 +27,7 @@ const Subtotal = () => {
         thousandSeparator={true}
         prefix={"₹"}
         />
-        <button>Proceed to checkout</button>
+        <button onClick={()=> navigate('/payment')}>Proceed to checkout</button>
     </div>
   )
 }

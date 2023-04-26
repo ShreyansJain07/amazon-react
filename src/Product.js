@@ -1,6 +1,7 @@
 import { Stars } from '@mui/icons-material'
 import React from 'react'
 import './Product.css'
+import { Link } from 'react-router-dom';
 import { useStateValue } from './StateProvider'
 const Product = ({id,title,image,price,rating}) => {
     const [{basket},dispatch] = useStateValue();
@@ -17,7 +18,8 @@ const Product = ({id,title,image,price,rating}) => {
 
   return (
     <div className='product'>
-        <div className='product__info'>
+    <Link style={{textDecoration:"none",color:"black"}} to={`/product/${id}`}>
+    <div className='product__info'>
             <p>{title}</p>
             <p className='product__price'>
                 <small>₹</small>
@@ -27,7 +29,9 @@ const Product = ({id,title,image,price,rating}) => {
                 {Array(rating).fill().map( _ => <p>🌟</p> )}
             </div>
         </div>
+    </Link>
         <img alt="" src={image} />
+        
         <button onClick={addToBasket} >Add to Basket</button>
     </div>
   )
